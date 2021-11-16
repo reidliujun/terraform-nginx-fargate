@@ -1,6 +1,6 @@
 # Terraform project to run a dummy nginx website with ECS fargate
 
-This project will create the following resources
+###This project will create the following resources
 - A new VPC
     - 2 private subnets + 2 public subnets
     - Internet Gateway
@@ -13,4 +13,9 @@ This project will create the following resources
 
 The project will output the DNS of the ALB.
 
+###To run the project, put the AWS secrets and keys in `version.tf`
+```
+terraform init
+terraform apply
+```
 

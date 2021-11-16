@@ -19,3 +19,19 @@ terraform init
 terraform apply
 ```
 
+### To clean up the resources, run
+```
+terraform destroy
+```
+
+### Pros and Cons of the solution
+
+#### Pros of using AWS ECS Fargate
+- No need to maintain servers
+- Scaling is easy with just Fargate configuration
+- Price is based on usage which is very friendly for a small project with little usage
+
+### Cons of using AWS ECS Fargate
+- Less visibility as there is no such traditional server/container to log into to see what is actually happening on the container. Typical use case would be to tune the memory usage of an application/docker image in production.
+- Can be expensive with a mature project in practise compare to other solutions such as EKS
+- Fargate is required to have a requested CPU/Memory to run due to billing, which has less flexibility compared to other solution such as EKS(CPU usage can be over the request if the node still has available computing power)

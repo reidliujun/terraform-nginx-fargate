@@ -5,7 +5,7 @@
     - 2 private subnets + 2 public subnets
     - Internet Gateway
 - A new ECS cluster
-    - ECS task to run Fargate with nginx Fargate
+    - ECS task to run Fargate with official nginx docker image
     - ECS service 
 - An ALB and a target group
 - Security groups needed (whitelisting IPs for the ALB)

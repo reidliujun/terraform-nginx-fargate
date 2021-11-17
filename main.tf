@@ -3,7 +3,7 @@ data "aws_availability_zones" "available_zones" {
 }
 
 resource "aws_vpc" "default" {
-  cidr_block = "10.32.0.0/16"
+  cidr_block = "10.1.0.0/16"
 }
 
 resource "aws_subnet" "public" {

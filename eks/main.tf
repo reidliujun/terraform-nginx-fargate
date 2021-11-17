@@ -39,12 +39,6 @@ module "vpc" {
     "kubernetes.io/cluster/${local.name}" = "shared"
     "kubernetes.io/role/internal-elb"     = "1"
   }
-
-  tags = {
-    Example    = local.name
-    GithubRepo = "terraform-aws-eks"
-    GithubOrg  = "terraform-aws-modules"
-  }
 }
 
 
@@ -73,10 +67,10 @@ module "eks" {
   vpc_id          = module.vpc.vpc_id
   subnets         = [module.vpc.private_subnets[0], module.vpc.public_subnets[1]]
 
-  worker_groups_launch_template = [
+  worker_groups = [
     {
       name          = "worker-group-1"
-      instance_type = "t2.micro"
+      instance_type = "t2.small"
       asg_max_size  = 5
     }
   ]
